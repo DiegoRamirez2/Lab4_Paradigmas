@@ -1,0 +1,12 @@
+C:\Users\Usuario\source\repos\Laboratorio4\Lab4\JuegoDobble\bin\Debug\JuegoDobble.exe.config
+C:\Users\Usuario\source\repos\Laboratorio4\Lab4\JuegoDobble\bin\Debug\JuegoDobble.exe
+C:\Users\Usuario\source\repos\Laboratorio4\Lab4\JuegoDobble\bin\Debug\JuegoDobble.pdb
+C:\Users\Usuario\source\repos\Laboratorio4\Lab4\JuegoDobble\obj\Debug\JuegoDobble.csproj.AssemblyReference.cache
+C:\Users\Usuario\source\repos\Laboratorio4\Lab4\JuegoDobble\obj\Debug\JuegoDobble.csproj.SuggestedBindingRedirects.cache
+C:\Users\Usuario\source\repos\Laboratorio4\Lab4\JuegoDobble\obj\Debug\JuegoDobble.CreateGame.resources
+C:\Users\Usuario\source\repos\Laboratorio4\Lab4\JuegoDobble\obj\Debug\JuegoDobble.MainMenu.resources
+C:\Users\Usuario\source\repos\Laboratorio4\Lab4\JuegoDobble\obj\Debug\JuegoDobble.Properties.Resources.resources
+C:\Users\Usuario\source\repos\Laboratorio4\Lab4\JuegoDobble\obj\Debug\JuegoDobble.csproj.GenerateResource.cache
+C:\Users\Usuario\source\repos\Laboratorio4\Lab4\JuegoDobble\obj\Debug\JuegoDobble.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\source\repos\Laboratorio4\Lab4\JuegoDobble\obj\Debug\JuegoDobble.exe
+C:\Users\Usuario\source\repos\Laboratorio4\Lab4\JuegoDobble\obj\Debug\JuegoDobble.pdb
