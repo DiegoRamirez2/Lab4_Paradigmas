@@ -46,6 +46,9 @@
             this.Modo = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.FillBtn = new System.Windows.Forms.Button();
+            this.ClearBtn = new System.Windows.Forms.Button();
             this.Num = new System.Windows.Forms.Label();
             this.cantidadE = new System.Windows.Forms.Label();
             this.Elem = new System.Windows.Forms.TextBox();
@@ -182,6 +185,7 @@
             // NumP
             // 
             this.NumP.Location = new System.Drawing.Point(212, 67);
+            this.NumP.MaxLength = 4;
             this.NumP.Name = "NumP";
             this.NumP.Size = new System.Drawing.Size(121, 20);
             this.NumP.TabIndex = 35;
@@ -232,6 +236,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SeaGreen;
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.FillBtn);
+            this.panel1.Controls.Add(this.ClearBtn);
             this.panel1.Controls.Add(this.Num);
             this.panel1.Controls.Add(this.cantidadE);
             this.panel1.Controls.Add(this.Elem);
@@ -241,6 +248,46 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(348, 198);
             this.panel1.TabIndex = 36;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Roboto", 7F, System.Drawing.FontStyle.Bold);
+            this.label10.Location = new System.Drawing.Point(16, 88);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(117, 26);
+            this.label10.TabIndex = 40;
+            this.label10.Text = "(También puede rellenar\r\ncon números)\r\n";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // FillBtn
+            // 
+            this.FillBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.FillBtn.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Bold);
+            this.FillBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.FillBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.FillBtn.Location = new System.Drawing.Point(74, 166);
+            this.FillBtn.Name = "FillBtn";
+            this.FillBtn.Size = new System.Drawing.Size(76, 29);
+            this.FillBtn.TabIndex = 43;
+            this.FillBtn.Text = "RELLENAR";
+            this.FillBtn.UseVisualStyleBackColor = false;
+            this.FillBtn.Click += new System.EventHandler(this.FillBtn_Click);
+            // 
+            // ClearBtn
+            // 
+            this.ClearBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.ClearBtn.Font = new System.Drawing.Font("Roboto", 8F, System.Drawing.FontStyle.Bold);
+            this.ClearBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClearBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ClearBtn.Location = new System.Drawing.Point(6, 166);
+            this.ClearBtn.Name = "ClearBtn";
+            this.ClearBtn.Size = new System.Drawing.Size(63, 29);
+            this.ClearBtn.TabIndex = 42;
+            this.ClearBtn.Text = "LIMPIAR";
+            this.ClearBtn.UseVisualStyleBackColor = false;
+            this.ClearBtn.Click += new System.EventHandler(this.ClearBtn_Click);
             // 
             // Num
             // 
@@ -266,7 +313,7 @@
             // 
             // Elem
             // 
-            this.Elem.Location = new System.Drawing.Point(18, 76);
+            this.Elem.Location = new System.Drawing.Point(19, 65);
             this.Elem.MaxLength = 16;
             this.Elem.Name = "Elem";
             this.Elem.Size = new System.Drawing.Size(114, 20);
@@ -389,5 +436,8 @@
         private System.Windows.Forms.Label cantidadE;
         private System.Windows.Forms.Label Num;
         private System.Windows.Forms.ComboBox numE;
+        private System.Windows.Forms.Button ClearBtn;
+        private System.Windows.Forms.Button FillBtn;
+        private System.Windows.Forms.Label label10;
     }
 }

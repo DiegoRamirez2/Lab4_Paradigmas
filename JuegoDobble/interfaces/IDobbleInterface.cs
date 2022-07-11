@@ -1,17 +1,22 @@
 using System.Collections;
 using System;
+using model;
+using System.Collections.Generic;
 
 namespace interfaces
 {
     public interface IDobbleInterface
     {
-        ArrayList SetConstructor(ArrayList E, int Num, int C);
+        List<Card> SetConstructor(List<String> E, int Num, int C);
         bool IsDobble();
-        ArrayList MissingCards();
-        void AddCard(int Pos);
-        ArrayList GetCardsSet();
-        ArrayList GetElements();
+        List<Card> MissingCards();
+        void AddCard(Card C1);
+        List<Card> GetCardsSet();
+        List<String> GetElements();
+        List<Card> CardsSubstract(List<Card> cards);
+        List<Card> Shuffle(List<Card> cards);
         String ToString();
         bool Equals(object o);
+        int GetHashCode();
     }
 }

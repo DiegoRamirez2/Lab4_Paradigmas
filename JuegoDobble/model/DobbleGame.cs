@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using interfaces;
-using System.Windows.Forms;
+using System.Linq;
 using model;
 
 namespace model
@@ -15,22 +15,22 @@ namespace model
 
         public int NumPlayers;
 
-        public ArrayList ListPlayers;
+        public List<Player> ListPlayers;
 
         public String GameMode;
 
         public String GameStatus;
 
-        public ArrayList GameArea;
+        public List<Card> GameArea;
 
         public DobbleGame(int NPlayers, Dobble cardsSet, String GM)
         {
             NumPlayers = NPlayers;
-            this.ListPlayers = new ArrayList();
+            this.ListPlayers = new List<Player>();
             this.DobbleSet = cardsSet;
             this.GameMode = GM;
             this.GameStatus = "Jugando";
-            this.GameArea = new ArrayList();
+            this.GameArea = new List<Card>();
         }
 
         public String Status()
@@ -40,11 +40,9 @@ namespace model
 
         public void StackMode()
         {
-            Console.WriteLine("Estamos en Stack");
             for (int i = 0; i < 2; i++)
             {
-                Console.WriteLine("Entramos al ciclo");
-                Card aux = (Card) this.DobbleSet.cardsSet[0];
+                Card aux = DobbleSet.cardsSet[0];
                 this.DobbleSet.cardsSet.RemoveAt(0);
                 this.GameArea.Add(aux);
             }
@@ -118,13 +116,12 @@ namespace model
             Card aux2 = new Card();
             aux.AddRange((Card)this.GameArea[0]);
             aux2.AddRange((Card)this.GameArea[1]);
-            Card aux3 = aux.CardIntersect(aux2);
+            List<String> aux3 = aux.CardIntersect(aux2);
             if (aux3.Count == 1 && String.Equals((String)aux3[0], Elemento, StringComparison.OrdinalIgnoreCase))
             {
                 this.AppendPoints();
                 this.GameArea.Clear();
             }
-
             this.NextTurn();
         }
 
@@ -191,7 +188,7 @@ namespace model
             return this.DobbleSet;
         }
 
-        public ArrayList GetListPlayers()
+        public List<Player> GetListPlayers()
         {
             return this.ListPlayers;
         }
@@ -234,7 +231,6 @@ namespace model
                         + this.GameStatus + "\nArea de Juego: ["
                         + sb2 + "]\n";
         }
-
         public override bool Equals(Object DBG1)
         {
             if ((this == DBG1))
@@ -262,10 +258,10 @@ namespace model
             int hashCode = -1156308396;
             hashCode = hashCode * -1521134295 + EqualityComparer<Dobble>.Default.GetHashCode(DobbleSet);
             hashCode = hashCode * -1521134295 + NumPlayers.GetHashCode();
-            hashCode = hashCode * -1521134295 + EqualityComparer<ArrayList>.Default.GetHashCode(ListPlayers);
+            hashCode = hashCode * -1521134295 + EqualityComparer<List<Player>>.Default.GetHashCode(ListPlayers);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(GameMode);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(GameStatus);
-            hashCode = hashCode * -1521134295 + EqualityComparer<ArrayList>.Default.GetHashCode(GameArea);
+            hashCode = hashCode * -1521134295 + EqualityComparer<List<Card>>.Default.GetHashCode(GameArea);
             return hashCode;
         }
     }

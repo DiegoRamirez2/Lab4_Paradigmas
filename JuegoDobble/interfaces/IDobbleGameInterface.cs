@@ -1,6 +1,7 @@
 using System;
 using model;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace interfaces
 {
@@ -19,7 +20,7 @@ namespace interfaces
         String Puntajes();
         String Resultado();
         Dobble GetDobbleSet();
-        ArrayList GetListPlayers();
+        List<Player> GetListPlayers();
         String GetGameMode();
         String ToString();
         bool Equals(object o);

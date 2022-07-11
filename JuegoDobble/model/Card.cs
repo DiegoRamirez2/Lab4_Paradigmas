@@ -7,16 +7,16 @@ using System.Linq;
 
 namespace model
 {
-    public class Card : ArrayList, ICardInterface
+    public class Card : List<String>, ICardInterface
     {
 
-        public ArrayList carta;
+        public List<String> carta;
 
         //  Metodos
         //  Constructor
         public Card()
         {
-            this.carta = new ArrayList();
+            this.carta = new List<String>();
         }
 
         public Card GetCarta()
@@ -59,34 +59,31 @@ namespace model
             }
             else
             {
-                Card aux = (Card)C1;
-                Card aux2 = CardIntersect(aux);
-                return aux2.Count == this.carta.Count;
+                Card aux = (Card) C1;
+                IEnumerable<String> list = aux.Intersect(this.carta);
+                return list.Count() == this.carta.Count;
             }
         }
-        public Card CardIntersect(Card C2)
+        public List<String> CardIntersect(Card C2)
         {
-            Card C1 = new Card();
-            for (int i = 0; i < C2.Count; i++)
+            List<String> list1 = new List<String>();
+            foreach(String S in this)
             {
-                if (this.carta.Contains((String) C2[i]))
-                {
-                    C1.carta.Add((String) C2[i]);
-                }
+                list1.Add(S);
             }
-            return C1;
+            List<String> list2 = new List<String>();
+            foreach(String S in C2)
+            {
+                list2.Add(S);
+            }
+            return list1.Intersect(list2).ToList();
         }
-
         public override int GetHashCode()
         {
-            int hashCode = -1768568329;
+            int hashCode = 461492247;
             hashCode = hashCode * -1521134295 + Capacity.GetHashCode();
             hashCode = hashCode * -1521134295 + Count.GetHashCode();
-            hashCode = hashCode * -1521134295 + IsFixedSize.GetHashCode();
-            hashCode = hashCode * -1521134295 + IsReadOnly.GetHashCode();
-            hashCode = hashCode * -1521134295 + IsSynchronized.GetHashCode();
-            hashCode = hashCode * -1521134295 + EqualityComparer<object>.Default.GetHashCode(SyncRoot);
-            hashCode = hashCode * -1521134295 + EqualityComparer<ArrayList>.Default.GetHashCode(carta);
+            hashCode = hashCode * -1521134295 + EqualityComparer<List<string>>.Default.GetHashCode(carta);
             return hashCode;
         }
     }

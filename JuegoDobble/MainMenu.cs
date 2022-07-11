@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using model;
+using System;
 using System.Windows.Forms;
-using model;
-
 namespace JuegoDobble
 {
     public partial class MainMenu : Form
@@ -32,11 +24,11 @@ namespace JuegoDobble
         }
         public void Registrar_Click(object sender, EventArgs e)
         {
-            if(Game == null)
+            if (Game == null)
             {
                 correctGame.SetError(RegisterBtn, "No hay un juego creado para registrar jugadores");
             }
-            else if(!(MainMenu.Game.ListPlayers.Count < MainMenu.Game.NumPlayers))
+            else if (!(MainMenu.Game.ListPlayers.Count < MainMenu.Game.NumPlayers))
             {
                 correctGame.SetError(RegisterBtn, "No se pueden registrar más jugadores");
             }
@@ -47,6 +39,8 @@ namespace JuegoDobble
                     ventanaRegistrar.ShowDialog();
                 this.Show();
                 correctGame.SetError(RegisterBtn, "");
+                correctGame.SetError(PlayBtn, "");
+                correctGame.SetError(SeeGamebtn, "");
             }
 
         }
@@ -57,7 +51,7 @@ namespace JuegoDobble
 
         private void SeeGamebtn_Click(object sender, EventArgs e)
         {
-            if(Game == null)
+            if (Game == null)
             {
                 correctGame.SetError(SeeGamebtn, "No hay un juego creado para ver el estado completo");
             }
@@ -68,6 +62,7 @@ namespace JuegoDobble
                     ventanaVer.ShowDialog();
                 this.Show();
                 correctGame.SetError(SeeGamebtn, "");
+                correctGame.SetError(RegisterBtn, "");
             }
         }
 
@@ -77,9 +72,13 @@ namespace JuegoDobble
             {
                 correctGame.SetError(PlayBtn, "No hay un juego creado para jugar");
             }
-            else if(Game.ListPlayers.Count <= 1)
+            else if (Game.ListPlayers.Count <= 1)
             {
                 correctGame.SetError(PlayBtn, "No existen suficientes jugadores para jugar");
+            }
+            else if (Game.Status() == "Terminado")
+            {
+                correctGame.SetError(PlayBtn, "El juego actual se encuentra terminado, debe crear otro para poder jugar");
             }
             else
             {

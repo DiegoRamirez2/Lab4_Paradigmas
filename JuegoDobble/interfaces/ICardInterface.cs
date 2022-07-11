@@ -1,5 +1,6 @@
 using model;
 using System;
+using System.Collections.Generic;
 
 namespace interfaces
 {
@@ -8,5 +9,7 @@ namespace interfaces
         Card GetCarta();
         String ToString();
         bool Equals(object o);
+        List<String> CardIntersect(Card C);
+        int GetHashCode();
     }
 }

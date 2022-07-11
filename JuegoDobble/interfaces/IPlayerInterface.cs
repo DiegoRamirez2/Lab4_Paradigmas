@@ -6,6 +6,7 @@ public interface IPlayerInterface {
     String ToString();
     String PlayerAndPoints();
     String GetUsername();
+    int CompareTo(Player P);
     bool Equals(Object o);
     int GetHashCode();
 }

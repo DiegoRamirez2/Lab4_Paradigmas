@@ -1,36 +1,34 @@
-using System;
-using System.Collections;
-using System.Text;
 using interfaces;
-using model;
-using System.Diagnostics;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 namespace model
 {
     public class Dobble : IDobbleInterface
     {
 
-        public ArrayList cardsSet;
+        public List<Card> cardsSet;
 
-        public ArrayList elements;
+        public List<String> elements;
 
-        public Dobble(ArrayList elementos, int numE, int maxC)
+        public Dobble(List<String> elementos, int numE, int maxC)
         {
-            this.cardsSet = this.SetConstructor(elementos, numE, maxC);
+            this.cardsSet = Shuffle(SetConstructor(elementos, numE, maxC));
             this.elements = elementos;
-            
+
 
         }
 
-        public ArrayList SetConstructor(ArrayList ListaE, int numE, int maxC)
+        public List<Card> SetConstructor(List<String> ListaE, int numE, int maxC)
         {
             int n = (numE - 1);
             Card newCard = new Card();
-            ArrayList Cartas = new ArrayList();
+            List<Card> Cartas = new List<Card>();
             for (int i = 1; i <= n + 1; i++)
             {
-                newCard.Add((String) ListaE[i - 1]);
+                newCard.Add(ListaE[i - 1]);
             }
 
             Cartas.Add(newCard);
@@ -38,13 +36,13 @@ namespace model
             {
                 Card newCard2 = new Card
                 {
-                    (String) ListaE[0]
+                    ListaE[0]
                 };
                 for (int k = 1; (k <= n); k++)
                 {
                     int valor = ((n * j)
                                 + (k + 1));
-                    newCard2.Add((String) ListaE[valor - 1]);
+                    newCard2.Add(ListaE[valor - 1]);
                 }
 
                 Cartas.Add(newCard2);
@@ -56,12 +54,12 @@ namespace model
                 {
                     Card newCard3 = new Card
                     {
-                        (String) ListaE[i]
+                        ListaE[i]
                     };
                     for (int k = 1; (k <= n); k++)
                     {
-                        int valor = (n + (2+ ((n * (k - 1)) + ((((i - 1) * (k - 1)) + (j - 1)) % n))));
-                        newCard3.Add((String) ListaE[valor - 1]);
+                        int valor = (n + (2 + ((n * (k - 1)) + ((((i - 1) * (k - 1)) + (j - 1)) % n))));
+                        newCard3.Add(ListaE[valor - 1]);
                     }
 
                     Cartas.Add(newCard3);
@@ -75,10 +73,10 @@ namespace model
             }
             else
             {
-                ArrayList subCartas = new ArrayList();
+                List<Card> subCartas = new List<Card>();
                 for (int i = 0; (i < maxC); i++)
                 {
-                    subCartas.Add((Card)Cartas[i]);
+                    subCartas.Add(Cartas[i]);
                 }
 
                 return subCartas;
@@ -121,7 +119,7 @@ namespace model
                 {
                     Card aux1 = (Card)this.cardsSet[i];
                     Card aux2 = (Card)this.cardsSet[j];
-                    Card aux3 = aux1.CardIntersect(aux2);
+                    List<String> aux3 = aux1.CardIntersect(aux2);
                     if (aux3.Count != 1)
                     {
                         return false;
@@ -130,33 +128,32 @@ namespace model
                 }
 
             }
-
             return true;
         }
 
-        public ArrayList MissingCards()
+        public List<Card> MissingCards()
         {
             Card firstCard = (Card)this.cardsSet[0];
-            ArrayList aux = this.SetConstructor(this.elements, firstCard.Count, -1);
+            List<Card> aux = this.SetConstructor(this.elements, firstCard.Count, -1);
             return CardsSubstract(aux);
         }
 
-        public void AddCard(int Pos)
+        public void AddCard(Card C1)
         {
-            this.cardsSet.Add((Card)this.MissingCards()[Pos]);
+            this.cardsSet.Add(C1);
         }
 
-        public ArrayList GetCardsSet()
+        public List<Card> GetCardsSet()
         {
             return this.cardsSet;
         }
 
-        public ArrayList GetElements()
+        public List<String> GetElements()
         {
             return this.elements;
         }
 
-        public ArrayList CardsSubstract(ArrayList CS)
+        public List<Card> CardsSubstract(List<Card> CS)
         {
             for (int i = 0; i < this.cardsSet.Count; i++)
             {
@@ -167,7 +164,11 @@ namespace model
             }
             return CS;
         }
-
+        public List<Card> Shuffle(List<Card> Lista)
+        {
+            var rnd = new Random();
+            return Lista.OrderBy(item => rnd.Next()).ToList();
+        }
         public override String ToString()
         {
             StringBuilder cadena = new StringBuilder();
@@ -177,9 +178,9 @@ namespace model
                 cadena.Append("Carta N° ").Append(i + 1).Append(": ").Append(this.cardsSet[i]).Append("\n");
             }
             elementos.Append("[");
-            for(int j = 0; j < this.elements.Count; j++)
+            for (int j = 0; j < this.elements.Count; j++)
             {
-                if(j == elements.Count - 1)
+                if (j == elements.Count - 1)
                 {
                     elementos.Append((String)elements[j]);
                     elementos.Append("]");
@@ -189,7 +190,7 @@ namespace model
                     elementos.Append((String)elements[j]).Append(", ");
                 }
             }
-            return "El cardsSet es: \n" + cadena + "La lista de elementos usados es: "+ elementos + "\n";
+            return "El cardsSet es: \n" + cadena + "La lista de elementos usados es: " + elementos + "\n";
         }
 
         public override bool Equals(Object DB1)
@@ -215,8 +216,8 @@ namespace model
         public override int GetHashCode()
         {
             int hashCode = 1777670008;
-            hashCode = hashCode * -1521134295 + EqualityComparer<ArrayList>.Default.GetHashCode(cardsSet);
-            hashCode = hashCode * -1521134295 + EqualityComparer<ArrayList>.Default.GetHashCode(elements);
+            hashCode = hashCode * -1521134295 + EqualityComparer<List<Card>>.Default.GetHashCode(cardsSet);
+            hashCode = hashCode * -1521134295 + EqualityComparer<List<string>>.Default.GetHashCode(elements);
             return hashCode;
         }
     }

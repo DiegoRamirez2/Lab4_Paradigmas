@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCards.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCards.Designer.cs">
+      <DependentUpon>AddCards.cs</DependentUpon>
+    </Compile>
     <Compile Include="model\Card.cs" />
     <Compile Include="CreateGame.cs">
       <SubType>Form</SubType>
@@ -71,6 +77,12 @@
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="model\Player.cs" />
+    <Compile Include="MostrarPuntaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MostrarPuntaje.Designer.cs">
+      <DependentUpon>MostrarPuntaje.cs</DependentUpon>
+    </Compile>
     <Compile Include="PlayMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,11 +104,17 @@
     <Compile Include="VerGame.Designer.cs">
       <DependentUpon>VerGame.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddCards.resx">
+      <DependentUpon>AddCards.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateGame.resx">
       <DependentUpon>CreateGame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MostrarPuntaje.resx">
+      <DependentUpon>MostrarPuntaje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PlayMenu.resx">
       <DependentUpon>PlayMenu.cs</DependentUpon>

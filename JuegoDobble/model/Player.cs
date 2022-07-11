@@ -12,12 +12,12 @@ namespace model
 
         public String Username;
 
-        public ArrayList Cartas;
+        public List<Card> Cartas;
 
         public Player(String User)
         {
             this.Username = User;
-            this.Cartas = new ArrayList();
+            this.Cartas = new List<Card>();
         }
 
         public int ObtainPoint()
@@ -79,7 +79,7 @@ namespace model
         {
             int hashCode = -1078345092;
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Username);
-            hashCode = hashCode * -1521134295 + EqualityComparer<ArrayList>.Default.GetHashCode(Cartas);
+            hashCode = hashCode * -1521134295 + EqualityComparer<List<Card>>.Default.GetHashCode(Cartas);
             return hashCode;
         }
     }

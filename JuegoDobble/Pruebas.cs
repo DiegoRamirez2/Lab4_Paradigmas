@@ -1,4 +1,4 @@
-﻿
+﻿/*
 using System;
 using System.Collections.Generic;
 using System.Collections;
@@ -13,11 +13,19 @@ namespace JuegoDobble
     {
         static void Main(string[] args)
         {
-            ArrayList set1 = new ArrayList
+            List<String> set1 = new List<String>
             {
                 "1", "2", "3", "4", "5", "6", "7"
             };
-            Dobble DobbleNew = new Dobble(set1, 3, -1);
+            List<String> set2 = new List<String>
+            {
+                "1", "2", "3"
+            };
+            List<String> set3 = new List<String>
+            {
+                "1", "4", "5"
+            };
+            Dobble DobbleNew = new Dobble(set1, 3, 3);
             DobbleGame DobbleG = new DobbleGame(4, DobbleNew, "stackmode");
             Player P1 = new Player("Diego");
             DobbleG.Register(P1);
@@ -25,13 +33,14 @@ namespace JuegoDobble
             DobbleG.Register(P2);
             Player P3 = new Player("Mel");
             DobbleG.Register(P3);
-            DobbleG.Null();
             Console.WriteLine(DobbleG.ToString());
-            DobbleG.SpotIt("1");
-            Card aux = (Card) DobbleG.GameArea[0];
-            Card aux1 = (Card) DobbleG.GameArea[1];
-            Console.WriteLine(aux1.ToString());
-            Console.WriteLine(aux.ToString());
+            List<Card> aux = DobbleG.DobbleSet.MissingCards();
+            foreach(Card card in aux)
+            {
+                Console.WriteLine(card.ToString());
+            }
+
         }
     }
 }
+*/

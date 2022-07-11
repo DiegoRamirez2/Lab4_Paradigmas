@@ -25,3 +25,5 @@ C:\Users\Usuario\source\repos\Lab4_Paradigmas\JuegoDobble\obj\Debug\JuegoDobble.
 C:\Users\Usuario\source\repos\Lab4_Paradigmas\JuegoDobble\obj\Debug\JuegoDobble.RegistrarMenu.resources
 C:\Users\Usuario\source\repos\Lab4_Paradigmas\JuegoDobble\obj\Debug\JuegoDobble.VerGame.resources
 C:\Users\Usuario\source\repos\Lab4_Paradigmas\JuegoDobble\obj\Debug\JuegoDobble.PlayMenu.resources
+C:\Users\Usuario\source\repos\Lab4_Paradigmas\JuegoDobble\obj\Debug\JuegoDobble.MostrarPuntaje.resources
+C:\Users\Usuario\source\repos\Lab4_Paradigmas\JuegoDobble\obj\Debug\JuegoDobble.AddCards.resources
