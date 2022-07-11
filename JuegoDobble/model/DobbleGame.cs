@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using interfaces;
+using System.Windows.Forms;
 using model;
 
 namespace model
@@ -118,7 +119,7 @@ namespace model
             aux.AddRange((Card)this.GameArea[0]);
             aux2.AddRange((Card)this.GameArea[1]);
             Card aux3 = aux.CardIntersect(aux2);
-            if (aux3.Count == 1 && String.Equals((String)aux3[0], Elemento, System.StringComparison.OrdinalIgnoreCase))
+            if (aux3.Count == 1 && String.Equals((String)aux3[0], Elemento, StringComparison.OrdinalIgnoreCase))
             {
                 this.AppendPoints();
                 this.GameArea.Clear();

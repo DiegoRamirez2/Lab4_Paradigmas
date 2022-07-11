@@ -71,14 +71,35 @@
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="model\Player.cs" />
+    <Compile Include="PlayMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlayMenu.Designer.cs">
+      <DependentUpon>PlayMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Pruebas.cs" />
+    <Compile Include="RegistrarMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistrarMenu.Designer.cs">
+      <DependentUpon>RegistrarMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VerGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerGame.Designer.cs">
+      <DependentUpon>VerGame.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CreateGame.resx">
       <DependentUpon>CreateGame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayMenu.resx">
+      <DependentUpon>PlayMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -90,6 +111,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RegistrarMenu.resx">
+      <DependentUpon>RegistrarMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerGame.resx">
+      <DependentUpon>VerGame.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -67,7 +67,7 @@ namespace model
         public Card CardIntersect(Card C2)
         {
             Card C1 = new Card();
-            for (int i = 0; i < this.carta.Count; i++)
+            for (int i = 0; i < C2.Count; i++)
             {
                 if (this.carta.Contains((String) C2[i]))
                 {

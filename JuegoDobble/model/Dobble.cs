@@ -3,6 +3,7 @@ using System.Collections;
 using System.Text;
 using interfaces;
 using model;
+using System.Diagnostics;
 using System.Collections.Generic;
 
 namespace model
@@ -18,6 +19,7 @@ namespace model
         {
             this.cardsSet = this.SetConstructor(elementos, numE, maxC);
             this.elements = elementos;
+            
 
         }
 
