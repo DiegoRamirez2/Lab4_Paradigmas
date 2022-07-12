@@ -64,10 +64,10 @@ namespace model
         {
             if(this.ObtainPoint() < Jugador.ObtainPoint())
             {
-                return -1;
+                return 1;
             }
             else if(this.ObtainPoint() > Jugador.ObtainPoint()) {
-                return 1;
+                return -1;
             }
             else
             {

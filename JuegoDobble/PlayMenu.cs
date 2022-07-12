@@ -84,24 +84,7 @@ namespace JuegoDobble
             CorrectCards.SetError(SpotItBtn, "");
             CorrectCards.SetError(AddCardsBtn, "");
         }
-        /*
-        private void SpotItBtn_Click(object sender, EventArgs e)
-        {
-            if(Game.GameArea.Count != 2)
-            {
-                CorrectCards.SetError(NullBtn, "");
-                CorrectCards.SetError(SpotItBtn, "No existen cartas en el área de juego para comparar");
-                CorrectCards.SetError(AddCardsBtn, "");
-            }
-            else
-            {
-                CorrectCards.SetError(NullBtn, "");
-                CorrectCards.SetError(SpotItBtn, "");
-                CorrectCards.SetError(AddCardsBtn, "");
-                Show_SpotIt();
-            }
-        }
-        */
+        
         private void AgregarElementos()
         {
             Card C1 = (Card)Game.GameArea[0];
@@ -154,18 +137,6 @@ namespace JuegoDobble
             CardOne.Items.Clear();
             CardTwo.Items.Clear();
         }
-        private void AddCard()
-        {
-            List<Card> aux = Game.DobbleSet.MissingCards();
-            if (aux.Count == 0)
-            {
-                CorrectCards.SetError(AddCardsBtn, "No existen cartas faltantes");
-            }
-            else
-            {
-
-            }
-        }
         private void PointsBtn_Click(object sender, EventArgs e)
         {
             using (MostrarPuntaje ventanaPuntaje = new MostrarPuntaje(Game.Puntajes()))
@@ -175,7 +146,7 @@ namespace JuegoDobble
         {
             using (MostrarPuntaje ventanaPuntaje = new MostrarPuntaje(Game.Resultado()))
                 ventanaPuntaje.ShowDialog();
-            Game.Finish();
+            MainMenu.Game.Finish();
             this.Close();
         }
         private void Puntajes_DrawItem(object sender, DrawItemEventArgs e)
@@ -193,7 +164,6 @@ namespace JuegoDobble
             }
 
         }
-
         private void AddCardsBtn_Click(object sender, EventArgs e)
         {
             if(Game.DobbleSet.MissingCards().Count == 0)

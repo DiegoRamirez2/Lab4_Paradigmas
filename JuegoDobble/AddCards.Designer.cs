@@ -41,7 +41,7 @@
             this.MissingLabel.AutoSize = true;
             this.MissingLabel.BackColor = System.Drawing.Color.Transparent;
             this.MissingLabel.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MissingLabel.Location = new System.Drawing.Point(29, 9);
+            this.MissingLabel.Location = new System.Drawing.Point(71, 9);
             this.MissingLabel.Name = "MissingLabel";
             this.MissingLabel.Size = new System.Drawing.Size(92, 29);
             this.MissingLabel.TabIndex = 4;
@@ -52,7 +52,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(30, 87);
+            this.label2.Location = new System.Drawing.Point(30, 52);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(283, 23);
             this.label2.TabIndex = 5;
@@ -61,7 +61,7 @@
             // NumMissing
             // 
             this.NumMissing.FormattingEnabled = true;
-            this.NumMissing.Location = new System.Drawing.Point(112, 113);
+            this.NumMissing.Location = new System.Drawing.Point(112, 78);
             this.NumMissing.Name = "NumMissing";
             this.NumMissing.Size = new System.Drawing.Size(121, 21);
             this.NumMissing.TabIndex = 6;
@@ -73,7 +73,7 @@
             this.ExitBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ExitBtn.Image = ((System.Drawing.Image)(resources.GetObject("ExitBtn.Image")));
             this.ExitBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ExitBtn.Location = new System.Drawing.Point(112, 197);
+            this.ExitBtn.Location = new System.Drawing.Point(112, 162);
             this.ExitBtn.Name = "ExitBtn";
             this.ExitBtn.Size = new System.Drawing.Size(121, 42);
             this.ExitBtn.TabIndex = 9;
@@ -89,7 +89,7 @@
             this.NullBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.NullBtn.Image = ((System.Drawing.Image)(resources.GetObject("NullBtn.Image")));
             this.NullBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.NullBtn.Location = new System.Drawing.Point(76, 149);
+            this.NullBtn.Location = new System.Drawing.Point(76, 114);
             this.NullBtn.Name = "NullBtn";
             this.NullBtn.Size = new System.Drawing.Size(198, 42);
             this.NullBtn.TabIndex = 14;
@@ -103,7 +103,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gold;
-            this.ClientSize = new System.Drawing.Size(353, 251);
+            this.ClientSize = new System.Drawing.Size(353, 214);
             this.Controls.Add(this.NullBtn);
             this.Controls.Add(this.ExitBtn);
             this.Controls.Add(this.NumMissing);

@@ -16,7 +16,7 @@ namespace JuegoDobble
         private void AddCards_Load(object sender, EventArgs e)
         {
             getNumMissing();
-            MissingLabel.Text = MissingLabel.Text + MissingC.Count + "cartas";
+            MissingLabel.Text = MissingLabel.Text + MissingC.Count + " cartas";
         }
         private void getNumMissing()
         {
